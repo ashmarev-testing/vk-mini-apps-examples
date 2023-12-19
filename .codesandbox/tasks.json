@@ -12,22 +12,22 @@
     "start": {
       "name": "start",
       "command": "npm run start",
-      "runAtStart": true
+      "runAtStart": true,
+      "preview": {
+        "port": 3000
+      }
     },
     "tunnel": {
       "name": "tunnel",
-      "command": "npm run tunnel",
-      "runAtStart": false
+      "command": "npm run tunnel"
     },
     "predeploy": {
       "name": "predeploy",
-      "command": "npm run predeploy",
-      "runAtStart": false
+      "command": "npm run predeploy"
     },
     "deploy": {
       "name": "deploy",
-      "command": "npm run deploy",
-      "runAtStart": false
+      "command": "npm run deploy"
     }
   }
 }
