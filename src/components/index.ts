@@ -13,6 +13,7 @@ export { CartItem } from './CartItem/CartItem'
 export { TechInfo } from './TechInfo/TechInfo'
 export { Counter } from './Counter/Counter'
 export { Filters } from './Filters/Filters'
+export { VarDetail } from './VarDetail/VarDetail'
 
 export type { CounterProps } from './Counter/Counter'
 export type { TechInfoProps } from './TechInfo/TechInfo'

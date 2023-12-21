@@ -18,6 +18,7 @@ import {
   ProductPhoto,
   AddToCartButton,
   TechInfo,
+  VarDetail,
 } from 'src/components'
 import { Icon24ShoppingCartOutline } from '@vkontakte/icons'
 import { fetchProductInfo, selectProductInfo } from 'src/store/app.reducer'
@@ -56,7 +57,7 @@ export const ProductInfo: FC<NavIdProps> = (props) => {
   const shoppingCartIcon = useMemo(() => {
     return isDesktop ? (
       <IconButton
-        aria-label='shoppinfCartIcon'
+        aria-label="shoppinfCartIcon"
         onClick={() => routeNavigator.push(`/${ShopPanel.ShoppingCart}`)}
       >
         <Icon24ShoppingCartOutline />
@@ -119,6 +120,14 @@ export const ProductInfo: FC<NavIdProps> = (props) => {
           )}
         </div>
         {isDesktop && <TechInfo sections={SECTIONS} items={ITEMS} />}
+
+        {isProductFetched && (
+          <VarDetail
+            description={product.description}
+            product={product}
+            isInCart={isInCart}
+          />
+        )}
       </div>
     </Panel>
   )
