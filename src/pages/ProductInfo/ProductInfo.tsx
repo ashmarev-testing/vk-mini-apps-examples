@@ -29,16 +29,16 @@ import { ITEMS, SECTIONS } from './techConfig'
 import { ShopPanel } from 'src/routes'
 
 import { getCustomData } from 'src/api/custom/getCustomData'
-import { GetCustomDataResponse } from 'src/types'
+//import { GetCustomDataResponse } from 'src/types'
 
 import './ProductInfo.css'
 
 export const ProductInfo: FC<NavIdProps> = (props) => {
   const fetchCustomData = async () => {
     const customData = await getCustomData()
-    console.log('39 строка', customData)
-    console.log('40 строка', typeof customData)
-    return customData
+    console.log('39 строка', customData['image'])
+    console.log('40 строка', typeof customData['image'].toString())
+    return customData['image'].toString()
   }
   const dispatch = useAppDispatch()
   const routeNavigator = useRouteNavigator()
@@ -133,7 +133,9 @@ export const ProductInfo: FC<NavIdProps> = (props) => {
         <div>
           <CustomDetail />
         </div>
-        <CustomDetail2 customData={fetchCustomData()} />
+        <div>
+          <CustomDetail2 image={'qwerty'} answer={'no'} />
+        </div>
       </div>
     </Panel>
   )

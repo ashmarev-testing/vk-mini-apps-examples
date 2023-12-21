@@ -41,7 +41,6 @@ export enum ApiEndpoint {
   InitialData = 'getInitialData',
   ProductInfo = 'getProductInfo',
   FilteredProducts = 'getFilteredProducts',
-  CustomData = 'getCustomData',
 }
 
 export enum ImageBackgroundAppereance {
@@ -53,5 +52,6 @@ export enum ImageBackgroundAppereance {
 }
 
 export interface GetCustomDataResponse {
-  customData: JSON
+  image: string
+  answer: string
 }
