@@ -1,0 +1,1 @@
+export { getCustomData } from './getCustomData'

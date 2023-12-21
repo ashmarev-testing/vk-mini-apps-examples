@@ -18,7 +18,7 @@ import {
   ProductPhoto,
   AddToCartButton,
   TechInfo,
-  VarDetail,
+  CustomDetail,
 } from 'src/components'
 import { Icon24ShoppingCartOutline } from '@vkontakte/icons'
 import { fetchProductInfo, selectProductInfo } from 'src/store/app.reducer'
@@ -121,13 +121,7 @@ export const ProductInfo: FC<NavIdProps> = (props) => {
         </div>
         {isDesktop && <TechInfo sections={SECTIONS} items={ITEMS} />}
 
-        {isProductFetched && (
-          <VarDetail
-            description={product.description}
-            product={product}
-            isInCart={isInCart}
-          />
-        )}
+        {isProductFetched && <CustomDetail anyString={product.description} />}
       </div>
     </Panel>
   )
