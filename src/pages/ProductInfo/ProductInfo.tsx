@@ -1,4 +1,4 @@
-import { FC, useEffect, useMemo } from 'react'
+import { FC, useEffect, useMemo, useState } from 'react'
 import {
   useRouteNavigator,
   useSearchParams,
@@ -26,10 +26,14 @@ import { selectOrderProducts } from 'src/store/shoppingCart.reducer'
 import { useAppDispatch, useAppSelector } from 'src/store'
 import { ITEMS, SECTIONS } from './techConfig'
 import { ShopPanel } from 'src/routes'
+//import { getCustomData } from 'src/api/custom/getCustomData'
+//import { GetCustomDataResponse } from 'src/types'
 
 import './ProductInfo.css'
 
 export const ProductInfo: FC<NavIdProps> = (props) => {
+  //const customData = getCustomData()
+  //console.log('36 строка', customData)
   const dispatch = useAppDispatch()
   const routeNavigator = useRouteNavigator()
   const product = useAppSelector(selectProductInfo)
@@ -121,7 +125,7 @@ export const ProductInfo: FC<NavIdProps> = (props) => {
         </div>
         {isDesktop && <TechInfo sections={SECTIONS} items={ITEMS} />}
 
-        {isProductFetched && <CustomDetail anyString={product.description} />}
+        <CustomDetail />
       </div>
     </Panel>
   )

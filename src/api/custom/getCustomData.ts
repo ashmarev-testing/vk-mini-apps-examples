@@ -1,10 +1,7 @@
 import { makeRequestCustom } from 'src/api/makeRequestCustom'
+//import { GetCustomDataResponse } from 'src/types'
 
-interface GetCustomResponse {
-  Data: JSON
-}
-
-/** Получение данных магазина и рекомендованных пользователю товаров */
-export const getCustomData = async (): Promise<GetCustomResponse> => {
-  return await makeRequestCustom<GetCustomResponse>({})
-}
+/** Получение данных */
+//export const getCustomData = async (): Promise<GetCustomDataResponse> => {
+//  return await makeRequestCustom<GetCustomDataResponse>({})
+//}
