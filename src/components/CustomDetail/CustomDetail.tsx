@@ -1,14 +1,3 @@
-//import { GetCustomDataResponse } from 'src/types'
-//
-//export const CustomDetail = (props: GetCustomDataResponse) => {
-//  console.log(props)
-//  return (
-//    <div className="CustomDetailInfo">
-//      qqqqq {JSON.stringify(props.customData)}
-//    </div>
-//  )
-//}
-
 import React, { useEffect, useState } from 'react'
 
 export function CustomDetail() {

@@ -52,6 +52,6 @@ export enum ImageBackgroundAppereance {
   Violet = 'violet',
 }
 
-//export interface GetCustomDataResponse {
-//  customData: JSON
-//}
+export interface GetCustomDataResponse {
+  customData: JSON
+}

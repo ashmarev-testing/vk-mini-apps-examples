@@ -1,1 +1,1 @@
-//export { getCustomData } from './getCustomData'
+export { getCustomData } from './getCustomData'

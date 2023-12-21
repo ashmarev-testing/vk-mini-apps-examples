@@ -1,4 +1,4 @@
-const API_URL = 'https://favqs.com/api/qotd'
+const API_URL = 'https://yesno.wtf/api'
 
 interface CustomArguments {
   params?: Record<string, string>

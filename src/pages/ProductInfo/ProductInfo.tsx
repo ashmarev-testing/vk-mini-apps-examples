@@ -1,4 +1,4 @@
-import { FC, useEffect, useMemo, useState } from 'react'
+import { FC, useEffect, useMemo } from 'react'
 import {
   useRouteNavigator,
   useSearchParams,
@@ -19,6 +19,7 @@ import {
   AddToCartButton,
   TechInfo,
   CustomDetail,
+  CustomDetail2,
 } from 'src/components'
 import { Icon24ShoppingCartOutline } from '@vkontakte/icons'
 import { fetchProductInfo, selectProductInfo } from 'src/store/app.reducer'
@@ -26,14 +27,19 @@ import { selectOrderProducts } from 'src/store/shoppingCart.reducer'
 import { useAppDispatch, useAppSelector } from 'src/store'
 import { ITEMS, SECTIONS } from './techConfig'
 import { ShopPanel } from 'src/routes'
-//import { getCustomData } from 'src/api/custom/getCustomData'
-//import { GetCustomDataResponse } from 'src/types'
+
+import { getCustomData } from 'src/api/custom/getCustomData'
+import { GetCustomDataResponse } from 'src/types'
 
 import './ProductInfo.css'
 
 export const ProductInfo: FC<NavIdProps> = (props) => {
-  //const customData = getCustomData()
-  //console.log('36 строка', customData)
+  const fetchCustomData = async () => {
+    const customData = await getCustomData()
+    console.log('39 строка', customData)
+    console.log('40 строка', typeof customData)
+    return customData
+  }
   const dispatch = useAppDispatch()
   const routeNavigator = useRouteNavigator()
   const product = useAppSelector(selectProductInfo)
@@ -124,8 +130,10 @@ export const ProductInfo: FC<NavIdProps> = (props) => {
           )}
         </div>
         {isDesktop && <TechInfo sections={SECTIONS} items={ITEMS} />}
-
-        <CustomDetail />
+        <div>
+          <CustomDetail />
+        </div>
+        <CustomDetail2 customData={fetchCustomData()} />
       </div>
     </Panel>
   )
