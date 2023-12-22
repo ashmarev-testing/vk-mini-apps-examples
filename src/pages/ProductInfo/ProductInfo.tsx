@@ -114,7 +114,12 @@ export const ProductInfo: FC<NavIdProps> = (props) => {
               />
             )}
           </div>
-
+          <div>
+            <CustomDetail />
+          </div>
+          <div>
+            <CustomDetail2 image={fetchCustomData()} answer={'no'} />
+          </div>
           {!isDesktop && (
             <FixedLayout filled vertical="bottom">
               <Div>
@@ -130,12 +135,6 @@ export const ProductInfo: FC<NavIdProps> = (props) => {
           )}
         </div>
         {isDesktop && <TechInfo sections={SECTIONS} items={ITEMS} />}
-        <div>
-          <CustomDetail />
-        </div>
-        <div>
-          <CustomDetail2 image={'qwerty'} answer={'no'} />
-        </div>
       </div>
     </Panel>
   )
