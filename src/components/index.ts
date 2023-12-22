@@ -14,7 +14,6 @@ export { TechInfo } from './TechInfo/TechInfo'
 export { Counter } from './Counter/Counter'
 export { Filters } from './Filters/Filters'
 export { CustomDetail } from './CustomDetail/CustomDetail'
-export { CustomDetail2 } from './CustomDetail/CustomDetail2'
 
 export type { CounterProps } from './Counter/Counter'
 export type { TechInfoProps } from './TechInfo/TechInfo'

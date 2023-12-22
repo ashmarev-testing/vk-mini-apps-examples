@@ -1,4 +1,4 @@
-const API_URL = 'https://yesno.wtf/api'
+const API_URL = 'https://jsonplaceholder.typicode.com/posts'
 
 interface CustomArguments {
   params?: Record<string, string>

@@ -19,7 +19,6 @@ import {
   AddToCartButton,
   TechInfo,
   CustomDetail,
-  CustomDetail2,
 } from 'src/components'
 import { Icon24ShoppingCartOutline } from '@vkontakte/icons'
 import { fetchProductInfo, selectProductInfo } from 'src/store/app.reducer'
@@ -36,9 +35,9 @@ import './ProductInfo.css'
 export const ProductInfo: FC<NavIdProps> = (props) => {
   const fetchCustomData = async () => {
     const customData = await getCustomData()
-    console.log('39 строка', customData['image'])
-    console.log('40 строка', typeof customData['image'].toString())
-    return customData['image'].toString()
+    console.log('39 строка', customData)
+    console.log('40 строка', typeof customData)
+    return customData
   }
   const dispatch = useAppDispatch()
   const routeNavigator = useRouteNavigator()
@@ -114,12 +113,7 @@ export const ProductInfo: FC<NavIdProps> = (props) => {
               />
             )}
           </div>
-          <div>
-            <CustomDetail />
-          </div>
-          <div>
-            <CustomDetail2 image={fetchCustomData()} answer={'no'} />
-          </div>
+
           {!isDesktop && (
             <FixedLayout filled vertical="bottom">
               <Div>
@@ -134,7 +128,9 @@ export const ProductInfo: FC<NavIdProps> = (props) => {
             </FixedLayout>
           )}
         </div>
+
         {isDesktop && <TechInfo sections={SECTIONS} items={ITEMS} />}
+        {<CustomDetail mode={'secondary'} />}
       </div>
     </Panel>
   )
