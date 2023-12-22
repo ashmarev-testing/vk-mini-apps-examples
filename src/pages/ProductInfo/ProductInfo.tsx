@@ -24,21 +24,20 @@ import { Icon24ShoppingCartOutline } from '@vkontakte/icons'
 import { fetchProductInfo, selectProductInfo } from 'src/store/app.reducer'
 import { selectOrderProducts } from 'src/store/shoppingCart.reducer'
 import { useAppDispatch, useAppSelector } from 'src/store'
-import { ITEMS, SECTIONS } from './techConfig'
 import { ShopPanel } from 'src/routes'
 
-import { getCustomData } from 'src/api/custom/getCustomData'
+//import { getCustomData } from 'src/api/custom/getCustomData'
 //import { GetCustomDataResponse } from 'src/types'
 
 import './ProductInfo.css'
 
 export const ProductInfo: FC<NavIdProps> = (props) => {
-  const fetchCustomData = async () => {
-    const customData = await getCustomData()
-    console.log('39 строка', customData)
-    console.log('40 строка', typeof customData)
-    return customData
-  }
+  //const fetchCustomData = async () => {
+  //  const customData = await getCustomData()
+  //  console.log('39 строка', customData)
+  //  console.log('40 строка', typeof customData)
+  //  return customData
+  //}
   const dispatch = useAppDispatch()
   const routeNavigator = useRouteNavigator()
   const product = useAppSelector(selectProductInfo)
@@ -129,8 +128,7 @@ export const ProductInfo: FC<NavIdProps> = (props) => {
           )}
         </div>
 
-        {isDesktop && <TechInfo sections={SECTIONS} items={ITEMS} />}
-        {<CustomDetail mode={'secondary'} />}
+        {isDesktop && <CustomDetail mode={'secondary'} />}
       </div>
     </Panel>
   )

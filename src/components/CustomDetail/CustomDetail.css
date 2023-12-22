@@ -47,3 +47,15 @@
   align-items: center;
   align-self: stretch;
 }
+
+.CustomDetail_grid {
+  display: grid;
+  backface-visibility: hidden;
+  will-change: transform;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(var(--min-product-card-width), max-content)
+  );
+  margin: 0 12px 12px 12px;
+  gap: 12px;
+}
